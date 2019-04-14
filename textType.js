@@ -1,6 +1,6 @@
 /*
 *   textType.js
-*   (c) 2016 by Kamarul Risman
+*   (c) 2019 by Kamarul Risman
 */
 ;(function(global){
   "use strict";
