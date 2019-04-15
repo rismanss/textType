@@ -1,0 +1,27 @@
+{
+  "name": "texttype",
+  "version": "1.0.0",
+  "description": "simple text editor",
+  "main": "src/textType.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rismanss/textType.git"
+  },
+  "keywords": [
+    "textType",
+    "text-editor",
+    "wysiwyg"
+  ],
+  "author": "risman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rismanss/textType/issues"
+  },
+  "homepage": "https://github.com/rismanss/textType#readme"
+}
