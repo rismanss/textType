@@ -1,0 +1,72 @@
+.main-wrapper{
+    width:1000px;
+    background-color:#e0e7e7;
+    margin:0px auto;
+    border: 1px solid gray;
+}
+
+.title{
+    font-size:24px;
+    text-align:center;
+    color:#357f7c;
+}
+
+.menu{
+    width:auto;
+    background-color:#f2f6f6; 
+    border-bottom: 1px solid gray;
+    padding-top: 10px;
+    padding-bottom: 40px;
+}
+
+.menu ul {
+    list-style:none;
+    padding-bottom: 15px;
+}
+
+.menu ul li{
+
+    float:left;
+    margin-left:10px;
+    margin-bottom: 10px;
+}
+
+button{
+    width:55px;
+    height:30px;
+    border-radius:5px;
+    background: white;
+    border: 1px solid gray;
+}
+
+select{
+    height:30px;
+    border-radius:5px;
+    background: white;
+    border: 1px solid gray;
+}
+
+.main-body{
+    height:450px;
+    margin:0px auto;
+    background-color:#fff;
+}
+
+.editor{
+    height:450px;
+    overflow:hidden;
+    text-align:left;
+}
+
+.footer{
+    height:55px;
+    background-color:#d2d9d3;
+}
+
+/* make bulid h */
+.H1 { font-size: 2em; }
+.H2 { font-size: 1.5em; }
+.H3 { font-size: 1.17em; }
+.H4 { font-size: 1.12em; }
+.H5 { font-size: .83em; }
+.H6 { font-size: .75em; }
