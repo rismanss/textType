@@ -53,9 +53,13 @@ textType({
 ```
 
 selector : all selector (id, class, tag) .
+
 color : all color .
-data : ['bold','italic','underline','JustifyLeft','JustifyCenter','JustifyRight'] .
+
+data : ['bold','italic','underline','align-left','align-center','align-right'] .
+
 font : [all font] .
+
 heading: ['H1','H2','H3','H4','H5'] .
 
 ### License

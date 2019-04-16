@@ -13,7 +13,7 @@
   textType.defaults = {
     selector : '',
     color: '',
-    data: ['bold','italic','underline','JustifyLeft','JustifyCenter','JustifyRight'],
+    data: ['bold','italic','underline','align-left','align-center','align-right'],
     font: ["Times New Roman","Arial","Ubuntu","Courier New"],
     heading: ['H1','H2','H3','H4','H5']
   }
@@ -22,6 +22,12 @@
   textType.init = function(opts) {
     this.options = Object.assign(textType.defaults , opts);
     var selector = document.querySelector(this.options.selector);
+
+    var head = document.getElementsByTagName('head')[0];
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css';
+    head.appendChild(link);
 
     // build element html for text editor
     selector.className = 'main-wrapper';
@@ -38,11 +44,10 @@
     this.options.data.map((data) => {
       var li = document.createElement('li');
       var button = document.createElement('button');
-      var node = document.createTextNode(data);
+      button.className = 'fa fa-'+data;  
       
       ul.appendChild(li);
       li.appendChild(button);
-      button.appendChild(node);
 
       // func onclick for edit font
       button.onclick = function() {

@@ -1,11 +1,7 @@
-@charset "utf-8";
-/* CSS Document */
-
 .main-wrapper{
     width:1000px;
     background-color:#e0e7e7;
     margin:0px auto;
-    /* new */
     border: 1px solid gray;
 }
 
@@ -17,12 +13,7 @@
 
 .menu{
     width:auto;
-    /* height:70px; */
     background-color:#f2f6f6; 
-    /* padding-top:50px; */
-    /* new */
-    /* height: auto; */
-    /* new */
     border-bottom: 1px solid gray;
     padding-top: 10px;
     padding-bottom: 40px;
@@ -41,32 +32,27 @@
 }
 
 button{
-    /* width:55px; */
-    /* height:30px; */
-    border-radius:5px;
-    /* font-size:24px; */
-}
-input{
     width:55px;
-    height:25px;
+    height:30px;
+    border-radius:5px;
+    background: white;
+    border: 1px solid gray;
 }
+
 select{
-    height:25px;
-}
-.line{
-    height:17px;
-    /* background:url(../test/risman.jpg) repeat-x; */
+    height:30px;
+    border-radius:5px;
+    background: white;
+    border: 1px solid gray;
 }
 
 .main-body{
-    /* width:750px; */
     height:450px;
     margin:0px auto;
     background-color:#fff;
 }
 
 .editor{
-    /* width:750px; */
     height:450px;
     overflow:hidden;
     text-align:left;
