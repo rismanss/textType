@@ -52,12 +52,20 @@
       // func onclick for edit font
       button.onclick = function() {
         // getselection function "bold","italic","underline","left","center","right"
-        if (data) {
-          // bold text
-          document.execCommand(data, false, null);
-          // Set design mode to off
+        // bold, underline, italic
+        document.execCommand(data, false, null);
+        // Set design mode to off
+        document.designMode = "off";
+        if(data == 'align-left') {
+          document.execCommand('JustifyLeft', false, null);
           document.designMode = "off";
-        } 
+        } else if (data == 'align-center') {
+          document.execCommand('JustifyCenter', false, null);
+          document.designMode = "off";
+        } else if (data == 'align-right') {
+          document.execCommand('JustifyRight', false, null);
+          document.designMode = "off";
+        }
       };
     });
 
