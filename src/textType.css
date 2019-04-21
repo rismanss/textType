@@ -1,11 +1,13 @@
 .main-wrapper{
     width:1000px;
-    background-color:#e0e7e7;
     margin:0px auto;
-    border: 1px solid gray;
+    border: 1px solid lightgray;
+    box-shadow: 2px 2px 2px lightgray;
+    background: white;
 }
 
 .title{
+    background-color:#e0e7e7;
     font-size:24px;
     text-align:center;
     color:#357f7c;
@@ -14,14 +16,17 @@
 .menu{
     width:auto;
     background-color:#f2f6f6; 
-    border-bottom: 1px solid gray;
     padding-top: 10px;
     padding-bottom: 40px;
+    box-shadow: 1px 2px 2px lightgray;
 }
 
 .menu ul {
     list-style:none;
     padding-bottom: 15px;
+    /* new */
+    margin: 0;
+    padding: 0;
 }
 
 .menu ul li{
@@ -39,28 +44,38 @@ button{
     border: 1px solid gray;
 }
 
+.active, button:hover{
+    background: #ebebeb;
+}
+
 select{
     height:30px;
     border-radius:5px;
     background: white;
     border: 1px solid gray;
+    font-family: 'FontAwesome', 'Helvetica';
+}
+
+select:hover{
+    background: #ebebeb;
+}
+
+option {
+    background: white;
 }
 
 .main-body{
-    height:450px;
+    min-height: 100px;
     margin:0px auto;
     background-color:#fff;
 }
 
 .editor{
-    height:450px;
+    margin: 20px 20px 20px 20px;
+    min-height: 100px;
     overflow:hidden;
     text-align:left;
-}
-
-.footer{
-    height:55px;
-    background-color:#d2d9d3;
+    outline: none;
 }
 
 /* make bulid h */
@@ -70,3 +85,70 @@ select{
 .H4 { font-size: 1.12em; }
 .H5 { font-size: .83em; }
 .H6 { font-size: .75em; }
+
+#modal {
+    position: relative;
+    text-align: -webkit-center;
+}
+
+#alertBox {
+	width: 400px;
+	min-height: 180px;
+	margin-top: -200px;
+	border: 1px solid #666;
+	background-color: #fff;
+}
+
+#alertBox h1 {
+	margin:0;
+	font:bold 0.9em verdana,arial;
+	background-color: #20405d;
+	color: #fff;
+	border-bottom: 1px solid #000;
+	padding: 2px 0 2px 5px;
+}
+
+.inputLink {
+    margin: 20px;
+    width: 85%;
+    border: none;
+    border-bottom: 1px solid black;
+    outline: none;
+}
+.inputLink:hover, .inputLink:focus {
+    border-bottom: 2px solid black;
+}
+
+#closeBtn {
+	display:block;
+	position:relative;
+	margin:5px;
+	padding:7px;
+	border:0 none;
+    width:70px;
+    font:0.7em verdana,arial;
+	text-transform:uppercase;
+	text-align:center;
+	color:#FFF;
+	background-color:#357EBD;
+	border-radius: 3px;
+    text-decoration:none;
+    float: right;
+}
+
+#okBtn {
+	display:block;
+	position:relative;
+	margin:5px;
+	padding:7px;
+	border:0 none;
+    width:70px;
+    font:0.7em verdana,arial;
+	text-transform:uppercase;
+	text-align:center;
+	color:#FFF;
+	background-color:#357EBD;
+	border-radius: 3px;
+    text-decoration:none;
+    float: right;
+}
