@@ -203,7 +203,6 @@
                 return false;
               }
               msg.focus();
-              msg.value = 'http://placekitten.com/200/300';
 
               okbtn.onclick = function() {
                 editor.focus();
