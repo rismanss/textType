@@ -12,8 +12,7 @@
   // Set All the Default Values
   textType.defaults = {
     selector : '',
-    color: '',
-    data: ['align','heading','bold','italic','underline','font','link'],
+    data: ['align','heading','bold','italic','underline','font','link','image'],
     font: ["Times New Roman","Arial","Ubuntu","Courier New"],
     heading: ['H1','H2','H3','H4','H5'],
     align: ['Left','Center','Right','Full']
@@ -174,6 +173,131 @@
               function removeCustomAlert() {
                 document.getElementsByTagName("body")[0].removeChild(document.getElementById("modal"));
               }
+            } else if (data == 'image') {
+              var modalImg = document.getElementsByTagName("body")
+                [0].appendChild(document.createElement("div"));
+              modalImg.id = 'modal';
+
+              var alertImg = modalImg.appendChild(document.createElement("div"));
+              alertImg.id = "alertBoxImg";
+
+              var h1 = alertImg.appendChild(document.createElement("h1"));
+              h1.appendChild(document.createTextNode("Insert Link or Path Image"));
+
+              var msg = alertImg.appendChild(document.createElement("input"));
+              msg.className = 'inputLink';
+              msg.placeholder = 'insert link or Path Image';
+
+              var okbtn = alertImg.appendChild(document.createElement("a"));
+              okbtn.id = "okBtn";
+              okbtn.appendChild(document.createTextNode("ok"));
+              okbtn.href = "#";
+
+              var closebtn = alertImg.appendChild(document.createElement("a"));
+              closebtn.id = "closeBtn";
+              closebtn.appendChild(document.createTextNode("close"));
+              closebtn.href = "#";
+
+              closebtn.onclick = function() {
+                removeCustomAlert();
+                return false;
+              }
+              msg.focus();
+              msg.value = 'http://placekitten.com/200/300';
+
+              okbtn.onclick = function() {
+                editor.focus();
+                document.execCommand(
+                  'insertHTML', 
+                  false, 
+                  '<img src="'+msg.value+'" class="img">'
+                );
+                // ======== for edit resize ========
+                var resize = document.getElementsByClassName('img');
+                var resizing = document.querySelector('.img');
+                var current = document.getElementsByClassName("imgActive");
+                var tooltip = document.createElement('span');
+                var tooltipclass = document.getElementsByClassName('tooltip');
+
+                var floatRight = document.createElement('button');
+                var floatLeft = document.createElement('button');
+                var imgSmall = document.createElement('button');
+                var imgMedium = document.createElement('button');
+                var imgFull = document.createElement('button');
+                imgFull.appendChild(document.createTextNode('100%'));
+                imgMedium.appendChild(document.createTextNode('50%'));
+                imgSmall.appendChild(document.createTextNode('25%'));
+                floatRight.className = 'fa fa-align-right tooltipButon';
+                floatLeft.className = 'fa fa-align-left tooltipButon';
+                imgSmall.className = 'tooltipButon';
+                imgMedium.className = 'tooltipButon';
+                imgFull.className = 'tooltipButon';
+                tooltip.appendChild(imgFull);
+                tooltip.appendChild(imgMedium);
+                tooltip.appendChild(imgSmall);
+                tooltip.appendChild(floatLeft);
+                tooltip.appendChild(floatRight);
+
+                for (var i = 0; i < resize.length; i++) {
+                  resize[i].addEventListener("click", function() {
+                    if (current.length > 0) { 
+                      current[0].className = current[0].className.replace(" imgActive", "");
+                    }
+                    this.className += " imgActive";
+                  });
+                  editor.onclick = function(e){
+                    if (current.length > 0 && tooltipclass.length > 0) {
+                      if(e.target.className != 'img imgActive') {
+                        removeSelectImage();
+                      }
+                    }
+                  }
+                }
+                imgFull.onclick = function () {
+                  resizing.style.width = '100%';
+                  removeSelectImage();
+                }
+                imgMedium.onclick = function () {
+                  resizing.style.width = '50%';
+                  removeSelectImage();
+                }
+                imgSmall.onclick = function () {
+                  resizing.style.width = '25%';
+                  removeSelectImage();
+                }
+                floatLeft.onclick = function () {
+                  resizing.style.float = 'left';
+                  removeSelectImage();
+                }
+                floatRight.onclick = function () {
+                  resizing.style.float = 'right';
+                  removeSelectImage();
+                }
+                resizing.onclick = function () {
+                  makeTooltip();
+                  button.disabled = true;
+                  if (tooltipclass.length > 1) {
+                    tooltipclass[0].classList.replace('tooltip', 'tooltipActive');
+                  }
+                }
+                function removeSelectImage () {
+                  button.disabled = false;
+                  tooltipclass[0].classList.replace('tooltip', 'tooltipActive');
+                  current[0].classList.remove('imgActive');
+                }
+                function makeTooltip() {
+                  tooltip.style.top = resizing.offsetTop - 50+'px';
+                  tooltip.style.left = resizing.offsetLeft + (resizing.width / 2) - 130 +'px';
+                  tooltip.className = 'tooltip';
+                  tooltip.contentEditable = 'false';
+                  selector.appendChild(tooltip);
+                }
+                removeCustomAlert();
+                return false; 
+              }
+              function removeCustomAlert() {
+                document.getElementsByTagName("body")[0].removeChild(document.getElementById("modal"));
+              }
             } else {
               editor.focus();
               // getselection function "bold","italic","underline"
@@ -198,9 +322,6 @@
     selector.appendChild(menu);
     mainBody.appendChild(editor);
     selector.appendChild(mainBody);
-
-    // set color on textType.default
-    selector.style.background = this.options.color;
   }
 
   if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
