@@ -87,8 +87,11 @@ option {
 .H6 { font-size: .75em; }
 
 #modal {
-    position: relative;
+    /* position: relative; */
     text-align: -webkit-center;
+    position: fixed;
+    top: 250px;
+    left: 35%;
 }
 
 #alertBox {
@@ -115,7 +118,7 @@ option {
     border-bottom: 1px solid black;
     outline: none;
 }
-.inputLink:hover, .inputLink:focus {
+.inputLink:focus {
     border-bottom: 2px solid black;
 }
 
@@ -151,4 +154,63 @@ option {
 	border-radius: 3px;
     text-decoration:none;
     float: right;
+}
+
+#alertBoxImg {
+	width: 400px;
+	min-height: 120px;
+	margin-top: -200px;
+	border: 1px solid #666;
+	background-color: #fff;
+}
+
+#alertBoxImg h1 {
+	margin:0;
+	font:bold 0.9em verdana,arial;
+	background-color: #20405d;
+	color: #fff;
+	border-bottom: 1px solid #000;
+	padding: 2px 0 2px 5px;
+}
+
+.img {
+    float: left;
+    padding: 5px;
+    /* width: 200px;
+    height: 200px; */
+    cursor: pointer;
+}
+
+.imgActive {
+    border: 3px solid;
+}
+
+.tooltip {
+    background: black;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+}
+
+.tooltipActive {
+    visibility: hidden;
+}
+
+.tooltip::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+}
+
+.tooltip .tooltipButon {
+    border: 1px solid;
+    font: normal normal 14px/1 FontAwesome;
+    border-radius: initial;
 }
