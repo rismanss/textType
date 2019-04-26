@@ -12,7 +12,6 @@
   // Set All the Default Values
   textType.defaults = {
     selector : '',
-    color: '',
     data: ['align','heading','bold','italic','underline','font','link','image'],
     font: ["Times New Roman","Arial","Ubuntu","Courier New"],
     heading: ['H1','H2','H3','H4','H5'],
@@ -276,11 +275,13 @@
                 }
                 resizing.onclick = function () {
                   makeTooltip();
+                  button.disabled = true;
                   if (tooltipclass.length > 1) {
                     tooltipclass[0].classList.replace('tooltip', 'tooltipActive');
                   }
                 }
                 function removeSelectImage () {
+                  button.disabled = false;
                   tooltipclass[0].classList.replace('tooltip', 'tooltipActive');
                   current[0].classList.remove('imgActive');
                 }
@@ -321,9 +322,6 @@
     selector.appendChild(menu);
     mainBody.appendChild(editor);
     selector.appendChild(mainBody);
-
-    // set color on textType.default
-    selector.style.background = this.options.color;
   }
 
   if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {

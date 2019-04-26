@@ -40,27 +40,27 @@ Example using textType :
 
 ### Customization
 
-Customization selector, data, color, font, heading .
+Customization selector, data, font, heading, align .
 
 ```javascript
 textType({
-  selector : '#example', 
-  color: 'blue',
-  data: ['bold','italic','underline'], // should be array
+  selector : '#example',
+  data: ['align','heading','bold','italic','underline','font','link','image'], // should be array
   font: ["Times New Roman","Arial","Ubuntu","Courier New","Verdana","fantasy"], // should be array
-  heading: ['H1','H2','H3'] // should be array
+  heading: ['H1','H2','H3'], // should be array
+  align: ['Left','Center','Right','Full']
 });
 ```
 
 selector : all selector (id, class, tag) .
 
-color : all color .
-
-data : ['bold','italic','underline','align-left','align-center','align-right'] .
+data : ['align','heading','bold','italic','underline','font','link','image'] .
 
 font : [all font] .
 
 heading: ['H1','H2','H3','H4','H5'] .
+
+align: ['Left','Center','Right','Full'] .
 
 ### License
 
